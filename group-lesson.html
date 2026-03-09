@@ -797,6 +797,52 @@
                 gap: 20px;
             }
         }
+
+        /* ── Lang switcher ── */
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-left: 8px;
+        }
+        .lang-btn {
+            background: none;
+            border: 1.5px solid rgba(26, 43, 74, 0.25);
+            color: #1A2B4A;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 4px 8px;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s, border-color 0.2s;
+            line-height: 1;
+        }
+        .lang-btn:hover,
+        .lang-btn.active {
+            background: #ff741f;
+            border-color: #ff741f;
+            color: #fff;
+        }
+        .mobile-lang-switcher {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+        }
+        .mobile-lang-switcher .lang-btn {
+            border-color: rgba(255,255,255,0.3);
+            color: rgba(255,255,255,0.8);
+            font-size: 0.85rem;
+            padding: 8px 14px;
+        }
+        .mobile-lang-switcher .lang-btn:hover,
+        .mobile-lang-switcher .lang-btn.active {
+            background: #ff741f;
+            border-color: #ff741f;
+            color: #fff;
+        }
     </style>
 </head>
 
@@ -811,13 +857,19 @@
         </div>
         <div class="nav-right">
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#courses">Courses</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                <li><a href="index.html#about" data-i18n="nav.about">About</a></li>
+                <li><a href="index.html#courses" data-i18n="nav.courses">Courses</a></li>
+                <li><a href="index.html#contact" data-i18n="nav.contact">Contact</a></li>
             </ul>
             <a href="https://wa.me/212708351263?text=Hello!%20I'd%20like%20to%20book%20a%20surf%20session."
-                class="btn-nav" target="_blank" rel="noopener">Book a session</a>
+                class="btn-nav" target="_blank" rel="noopener" data-i18n="nav.book">Book a session</a>
+            <div class="lang-switcher">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="fr">FR</button>
+                <button class="lang-btn" data-lang="de">DE</button>
+                <button class="lang-btn" data-lang="es">ES</button>
+            </div>
         </div>
         <button class="burger" id="burgerBtn" aria-label="Menu" aria-expanded="false">
             <span></span><span></span><span></span>
@@ -826,13 +878,19 @@
 
     <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="index.html#courses">Courses</a></li>
-            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+            <li><a href="index.html#about" data-i18n="nav.about">About</a></li>
+            <li><a href="index.html#courses" data-i18n="nav.courses">Courses</a></li>
+            <li><a href="index.html#contact" data-i18n="nav.contact">Contact</a></li>
         </ul>
         <a href="https://wa.me/212708351263?text=Hello!%20I'd%20like%20to%20book%20a%20surf%20session." class="btn-nav"
-            target="_blank" rel="noopener">Book a session</a>
+            target="_blank" rel="noopener" data-i18n="nav.book">Book a session</a>
+        <div class="mobile-lang-switcher">
+            <button class="lang-btn" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="fr">FR</button>
+            <button class="lang-btn" data-lang="de">DE</button>
+            <button class="lang-btn" data-lang="es">ES</button>
+        </div>
     </div>
 
     <!-- HERO -->
@@ -843,11 +901,11 @@
                     stroke-linejoin="round">
                     <path d="M19 12H5M12 19l-7-7 7-7" />
                 </svg>
-                Back
+                <span data-i18n="back">Back</span>
             </a>
-            <div class="page-hero-label" data-reveal>Group Lessons</div>
-            <h1 data-reveal>Choose your<br><span>pack</span></h1>
-            <p class="page-hero-sub" data-reveal>All levels welcome · Anza · Taghazout · Agadir · Tamraght</p>
+            <div class="page-hero-label" data-reveal data-i18n="group.label">Group Lessons</div>
+            <h1 data-reveal><span data-i18n="subpage.chooseyourpack">Choose your</span><br><span data-i18n="subpage.pack">pack</span></h1>
+            <p class="page-hero-sub" data-reveal data-i18n="subpage.alllevels">All levels welcome · Anza · Taghazout · Agadir · Tamraght</p>
         </div>
     </section>
 
@@ -859,12 +917,12 @@
             <div class="pack-card" data-reveal>
                 <div class="pack-bg-number">1H</div>
                 <div class="pack-header">
-                    <span class="pack-duration">Single Session</span>
-                    <h2 class="pack-title">1H Surf Lesson</h2>
+                    <span class="pack-duration" data-i18n="pack.single">Single Session</span>
+                    <h2 class="pack-title" data-i18n="pack.1h.title">1H Surf Lesson</h2>
                 </div>
                 <ul class="pack-includes">
-                    <li>Surf Instructor</li>
-                    <li>Surfboard &amp; Wetsuit included</li>
+                    <li data-i18n="pack.instructor">Surf Instructor</li>
+                    <li data-i18n="pack.board">Surfboard &amp; Wetsuit included</li>
                 </ul>
                 <div class="pack-price-row">
                     <span class="pack-price-main">200</span>
@@ -879,21 +937,21 @@
                         <path
                             d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
                     </svg>
-                    Book on WhatsApp
+                    <span data-i18n="pack.book">Book on WhatsApp</span>
                 </a>
             </div>
 
             <!-- 2H LESSON -->
             <div class="pack-card pack-card--popular" data-reveal>
-                <span class="pack-popular-badge">Most popular</span>
+                <span class="pack-popular-badge" data-i18n="pack.popular">Most popular</span>
                 <div class="pack-bg-number">2H</div>
                 <div class="pack-header">
-                    <span class="pack-duration">Single Session</span>
-                    <h2 class="pack-title">2H Surf Lesson</h2>
+                    <span class="pack-duration" data-i18n="pack.single">Single Session</span>
+                    <h2 class="pack-title" data-i18n="pack.2h.title">2H Surf Lesson</h2>
                 </div>
                 <ul class="pack-includes">
-                    <li>Surf Instructor</li>
-                    <li>Surfboard &amp; Wetsuit included</li>
+                    <li data-i18n="pack.instructor">Surf Instructor</li>
+                    <li data-i18n="pack.board">Surfboard &amp; Wetsuit included</li>
                 </ul>
                 <div class="pack-price-row">
                     <span class="pack-price-main">250</span>
@@ -908,7 +966,7 @@
                         <path
                             d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
                     </svg>
-                    Book on WhatsApp
+                    <span data-i18n="pack.book">Book on WhatsApp</span>
                 </a>
             </div>
 
@@ -916,13 +974,13 @@
             <div class="pack-card" data-reveal>
                 <div class="pack-bg-number">3D</div>
                 <div class="pack-header">
-                    <span class="pack-duration">Starter Pack</span>
-                    <h2 class="pack-title">3 Days Pack</h2>
+                    <span class="pack-duration" data-i18n="pack.starter">Starter Pack</span>
+                    <h2 class="pack-title" data-i18n="pack.3d.title">3 Days Pack</h2>
                 </div>
                 <ul class="pack-includes">
-                    <li>3 × 2h Surf Lessons</li>
-                    <li>Surf Instructor</li>
-                    <li>Surfboard &amp; Wetsuit included</li>
+                    <li data-i18n="pack.3x">3 × 2h Surf Lessons</li>
+                    <li data-i18n="pack.instructor">Surf Instructor</li>
+                    <li data-i18n="pack.board">Surfboard &amp; Wetsuit included</li>
                 </ul>
                 <div class="pack-price-row">
                     <span class="pack-price-main">700</span>
@@ -937,7 +995,7 @@
                         <path
                             d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
                     </svg>
-                    Book on WhatsApp
+                    <span data-i18n="pack.book">Book on WhatsApp</span>
                 </a>
             </div>
 
@@ -945,13 +1003,13 @@
             <div class="pack-card" data-reveal>
                 <div class="pack-bg-number">5D</div>
                 <div class="pack-header">
-                    <span class="pack-duration">Intensive Pack</span>
-                    <h2 class="pack-title">5 Days Pack</h2>
+                    <span class="pack-duration" data-i18n="pack.intensive">Intensive Pack</span>
+                    <h2 class="pack-title" data-i18n="pack.5d.title">5 Days Pack</h2>
                 </div>
                 <ul class="pack-includes">
-                    <li>5 × 2h Surf Lessons</li>
-                    <li>Surf Instructor</li>
-                    <li>Surfboard &amp; Wetsuit included</li>
+                    <li data-i18n="pack.5x">5 × 2h Surf Lessons</li>
+                    <li data-i18n="pack.instructor">Surf Instructor</li>
+                    <li data-i18n="pack.board">Surfboard &amp; Wetsuit included</li>
                 </ul>
                 <div class="pack-price-row">
                     <span class="pack-price-main">1000</span>
@@ -966,7 +1024,7 @@
                         <path
                             d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.755-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
                     </svg>
-                    Book on WhatsApp
+                    <span data-i18n="pack.book">Book on WhatsApp</span>
                 </a>
             </div>
 
@@ -1019,6 +1077,7 @@
         </svg>
     </a>
 
+    <script src="i18n.js"></script>
     <script>
         // Scroll reveal
         const revealObserver = new IntersectionObserver((entries) => {

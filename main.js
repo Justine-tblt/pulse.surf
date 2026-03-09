@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!allValid) return;
 
         submitBtn.disabled = true;
-        submitBtn.textContent = 'Sending…';
+        submitBtn.textContent = (typeof TRANSLATIONS !== 'undefined' ? TRANSLATIONS[localStorage.getItem('pulse_lang') || 'en']['form.sending'] : 'Sending…');
 
         fetch('https://formspree.io/f/xreyevba', {
             method: 'POST',
@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else {
                     alert("Une erreur est survenue. Réessaie ou contacte-moi par WhatsApp.");
                     submitBtn.disabled = false;
-                    submitBtn.textContent = 'Send message';
+                    submitBtn.textContent = (typeof TRANSLATIONS !== 'undefined' ? TRANSLATIONS[localStorage.getItem('pulse_lang') || 'en']['form.submit'] : 'Send message');
                 }
             })
             .catch(() => {
