@@ -1210,8 +1210,9 @@ footer {
         flex-direction: column;
         gap: 15px;
     }
+
     .contact-section {
-        padding-top: calc(70px + 20px); 
+        padding-top: calc(70px + 20px);
         padding-left: 15px;
         padding-right: 15px;
     }
@@ -1423,7 +1424,7 @@ footer {
     }
 
     .section,
-    .how-section{
+    .how-section {
         padding: 60px 20px;
     }
 
@@ -1458,6 +1459,8 @@ footer {
         scroll-snap-align: start;
     }
 
+
+
     /* Flow */
     .flow-grid {
         flex-direction: column;
@@ -1474,6 +1477,12 @@ footer {
         flex-direction: column;
         text-align: center;
         gap: 10px;
+    }
+
+    .bring-text {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
     }
 
     /* About */
@@ -1582,7 +1591,7 @@ footer {
 
 .about-section-wrap {
     position: relative;
-    background-color: #f8f5f0;
+    background-color: var(--sand);
     padding-bottom: 70px;
     overflow: hidden;
 }
