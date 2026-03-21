@@ -323,6 +323,7 @@ const TRANSLATIONS = {
     "pack.progressive":            "Coaching progressif sur plusieurs jours",
     "pack.max":                    "Progression maximale garantie",
     "pack.book":                   "Réserver sur WhatsApp",
+    "card.group.star":              "Atmosphère fun et motivante : goûtez au plaisir du surf, ensemble !",
 
     "group.label":                 "Cours collectifs",
 
@@ -388,6 +389,8 @@ const TRANSLATIONS = {
     "card.private.price":  "Ab 300 MAD",
     "card.private.eur":    "~28 €",
     "card.more":           "Mehr Details",
+    "card.group.star":     "Eine spaßige und motivierende Atmosphäre – entdeckt gemeinsam die Freude am Surfen.",
+
 
     "card.group.badge":    "Am meisten Spaß",
     "card.group.title":    "Gruppenunterricht",
@@ -563,6 +566,8 @@ const TRANSLATIONS = {
     "card.private.price":  "Desde 300 MAD",
     "card.private.eur":    "~28 €",
     "card.more":           "Más detalles",
+    "card.group.star":     "Un ambiente divertido y motivador: descubran juntos el placer del surf.",
+
 
     "card.group.badge":    "La más divertida",
     "card.group.title":    "Clase en grupo",
